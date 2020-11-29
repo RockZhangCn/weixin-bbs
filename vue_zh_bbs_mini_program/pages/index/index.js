@@ -19,7 +19,7 @@ Page({
   onLoad: function () {
     // 设置顶部标题
     wx.setNavigationBarTitle({
-      title: 'Vue 中文论坛'
+      title: 'Vue中文论坛'
     })
     // 初始化当前页数
     wx.setStorageSync('page', 1)
@@ -33,6 +33,7 @@ Page({
       })
     }
     // 初始化全部数据
+    console.log("Before load all")
     this.getTopics('all')
   },
   onShow: function(){
@@ -76,6 +77,7 @@ Page({
   },
   // 导航栏change事件
   radioChange: function (e) {
+    console.log("changed.")
     wx.setStorageSync('isLast', false)
     wx.setStorageSync('page', 1)
     var a = this.data.navItems.map(function (v) {
@@ -87,6 +89,7 @@ Page({
       return v
     })
     var that = this
+    console.log("we select " + a.name + e.detail.value)
     that.setData({
       navItems: a
     })
@@ -110,6 +113,7 @@ Page({
       },
       success: function (res) {
         wx.hideLoading()
+        console.log("data length idds " + res.data.data)
         if (res.data.data.length > 0) {
           // 处理时间格式
           res.data.data.map(function (x) {
@@ -131,6 +135,9 @@ Page({
         }
         // 设置当前标签
         wx.setStorageSync('tab', tabname)
+      },
+      complete:function() {
+        console.log("Request compelte")
       }
     })
   }

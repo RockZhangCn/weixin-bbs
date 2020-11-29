@@ -4,21 +4,21 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": false,
+    "urlCheck": true,
     "es6": true,
     "enhance": false,
     "postcss": true,
     "preloadBackgroundData": false,
     "minified": true,
-    "newFeature": true,
+    "newFeature": false,
     "coverView": true,
     "nodeModules": false,
     "autoAudits": false,
     "showShadowRootInWxmlPanel": true,
     "scopeDataCheck": false,
-    "uglifyFileName": true,
+    "uglifyFileName": false,
     "checkInvalidKey": true,
-    "checkSiteMap": false,
+    "checkSiteMap": true,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
     "useMultiFrameRuntime": false,
@@ -37,12 +37,13 @@
     "minifyWXSS": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.8.0",
+  "libVersion": "2.14.0",
   "appid": "wx9be9ddc0138fd230",
-  "projectname": "%E8%8A%92%E6%9E%9CNew%20Life",
+  "projectname": "miniprogram-1",
   "debugOptions": {
     "hidedInDevtools": []
   },
+  "scripts": {},
   "isGameTourist": false,
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
@@ -53,23 +54,17 @@
     "conversation": {
       "list": []
     },
+    "game": {
+      "list": []
+    },
     "plugin": {
       "list": []
     },
-    "game": {
-      "currentL": -1,
+    "gamePlugin": {
       "list": []
     },
     "miniprogram": {
-      "list": [
-        {
-          "id": 0,
-          "name": "pages/message_detail/message_detail",
-          "pathName": "pages/me/me",
-          "query": "messageId=45",
-          "scene": null
-        }
-      ]
+      "list": []
     }
   }
 }

@@ -14,6 +14,7 @@ Page({
     reply:''
   },
   onLoad: function (option) {
+    console.log("onLoad show d  etail id " + option.id)
     this.getTpoic(option.id)
     this.setData({
       topic_id: option.id
@@ -37,6 +38,7 @@ Page({
   },
   //获取主题详情
   getTpoic: function (query) {
+    console.log("We received a deail page." + query)
     var id = query
     var that = this
     wx.request({

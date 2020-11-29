@@ -1,0 +1,19 @@
+
+Vue.js 中文论坛
+https://segmentfault.com/a/1190000010679082
+https://github.com/Ghostdar/wechat-weapp-vueForum
+
+列表非常不错，简洁大气， 还有内容展示非常不错。
+顶层的贴子分类。
+
+
+
+芒果 
+https://github.com/Xin-Felix/Mango
+内容发布，免责声明，Profile，
+用户登录。
+
+
+两个仓库进行简单合并，删除mango的后台java代码，只保留小程序代码。
+
+自己设计后台DB，Flask实现。
