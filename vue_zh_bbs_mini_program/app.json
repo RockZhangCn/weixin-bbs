@@ -15,5 +15,34 @@
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true
   },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "跳蚤市场",
+        "iconPath": "/images/tabBar/zhuye.png",
+        "selectedIconPath": "/images/tabBar/zhuye_active.png"
+      },
+      {
+        "pagePath": "pages/user/newtopic/newtopic",
+        "text": "邻里互助",
+        "iconPath": "/images/tabBar/tianjia.png",
+        "selectedIconPath": "/images/tabBar/tianjia_active.png"
+      },
+      {
+        "pagePath": "pages/user/collect/collect",
+        "text": "信息通告",
+        "iconPath": "/images/tabBar/shangpin.png",
+        "selectedIconPath": "/images/tabBar/shangpin_active.png"
+      },
+      {
+        "pagePath": "pages/user/login/login",
+        "text": "登陆信息",
+        "iconPath": "/images/tabBar/wode.png",
+        "selectedIconPath": "/images/tabBar/wode_active.png"
+      }
+    ]
+  },
   "sitemapLocation": "sitemap.json"
+
 }

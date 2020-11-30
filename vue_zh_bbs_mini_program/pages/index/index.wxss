@@ -1,27 +1,12 @@
 /**index.wxss**/
-.header{
-  height:90rpx;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding:10rpx;
-  background: #1c6132;
-  color:#fff;
-}
 .naviga{
   font-size:32rpx
 }
-.header span{
-  margin-right:30rpx;
-  margin-left:10rpx;
-  flex:1
-}
-.logo{
-  height:90rpx;
-  width:90rpx;
-}
+
 .content{
   width:100%;
+  margin-left:28rpx;
+  margin-right:28rpx;
   font-size:28rpx;
 }
 .content .item{
@@ -33,7 +18,6 @@
   padding:8rpx;
 
   border-bottom:.5rpx solid #f0f0f0;
-  
 }
 .content .item text{
   padding:10rpx;
@@ -58,20 +42,22 @@
 }
 .nav{
   width:100%;
-  font-size:28rpx;
+  font-size:40rpx;
 }
 .active{
   color:#fff;
   background:#369219;
   padding:8rpx;
+  padding-left: 16rpx;
+  padding-right:16rpx;
   border-radius:10rpx;
 }
 .radio-group{
-  height: 80rpx;
+  height: 100rpx;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: #f6f6f6;
+  background: #e6e6e6;
 }
 .radio {
   display: block;

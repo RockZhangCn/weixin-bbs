@@ -1,12 +1,5 @@
-<!--index.wxml-->
-<view class="header">
-    <image class="logo" src="../../static/image/vue.png" alt=""></image>
-    <span>Vue.js</span>
-    <text>{{app.globalData.accesstoken}}</text>
-    <navigator class="naviga" wx:if="{{isLogin}}" url="/pages/user/user/user" hover-class="navigator-hover">我的</navigator>
-    <navigator class="naviga" wx:else url="/pages/user/login/login" hover-class="navigator-hover">登陆</navigator>
-</view>
 <view class="container">
+
   <view class="nav">
     <radio-group class="radio-group" bindchange="radioChange">
       <label class="radio" wx:for="{{navItems}}" wx:key="{{item.value}}" >
@@ -14,7 +7,8 @@
         <radio value="{{item.value}}" checked="{{item.checked}}" />
       </label>
     </radio-group>
-  </view>
+</view>
+
   <view class="content">
     <navigator  class="item"  wx:for="{{dataItems}}" wx:key="{{item.value}}" url="/pages/detail/detail?id={{item.id}}" hover-class="navigator-hover">
         <image src="{{item.author.avatar_url}}"></image>

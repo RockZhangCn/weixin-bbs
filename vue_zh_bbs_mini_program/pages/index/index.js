@@ -8,18 +8,17 @@ Page({
     dataItems: [],
     navItems: [
       {name: '全部',  value: 'all', checked: true},
-      {name: '精华',  value: 'good', checked: false},
-      {name: 'weex',  value: 'weex', checked: false},
-      {name: '分享',  value: 'share', checked: false},
-      {name: '问答',  value: 'ask', checked: false},
-      {name: '应聘',  value: 'job', checked: false}
+      {name: '物品',  value: 'good', checked: false},
+      {name: '教育',  value: 'weex', checked: false},
+      {name: '拼团',  value: 'share', checked: false},
+      {name: '求助',  value: 'ask', checked: false}
     ],
     isLogin: false
   },
   onLoad: function () {
     // 设置顶部标题
     wx.setNavigationBarTitle({
-      title: 'Vue中文论坛'
+      title: '泰华阳光海'
     })
     // 初始化当前页数
     wx.setStorageSync('page', 1)
