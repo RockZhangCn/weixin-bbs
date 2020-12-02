@@ -5,7 +5,7 @@ var API = {
   Get_user: '/user/', // 用户详情
   Get_message_count: '/message/count', // 获取未读消息数
   Get_messages: '/messages', // 获取已读和未读消息
-  Post_topic: '/topics', // 新建主题
+  Post_topic: '/article', // 新建主题
   Post_topic_collect: '/topic/collect', // 收藏主题
   Post_topic_de_collect: '/topic/de_collect', // 取消收藏
   Post_new_reply: '/topic/', // 新建评论

@@ -27,11 +27,20 @@ def list_catagory(catagory):
         return "{}"
 
 
-@app.route("/article/{id:int}", methods=["GET", "POST"])
-def view_article(id):
+@app.route("/article/<int:id>", methods=["GET", "POST"])
+def article(id):
     if request.method == "GET":
+        print("Id is " + str(id))
         return "GET Response"
     elif request.method == "POST":
+        data = request.get_data()
+
+        json_re = json.loads(data.decode('utf-8'))
+        title = json_re['title']
+        content = json_re['content']
+        user = json_re['user']
+        catagory = json_re['catagory']
+
         return "POST Response"
 
 @app.route("/", methods=["GET", "POST"])

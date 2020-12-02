@@ -5,6 +5,7 @@ App({
     console.log('go')
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    openid:null
   }
 })

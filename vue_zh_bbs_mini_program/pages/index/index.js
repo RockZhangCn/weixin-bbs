@@ -11,7 +11,8 @@ Page({
       {name: '物品',  value: 'good', checked: false},
       {name: '教育',  value: 'weex', checked: false},
       {name: '拼团',  value: 'share', checked: false},
-      {name: '求助',  value: 'ask', checked: false}
+      {name: '求助',  value: 'ask', checked: false},
+      {name: '其他',  value: 'other', checked: false}
     ],
     isLogin: false
   },

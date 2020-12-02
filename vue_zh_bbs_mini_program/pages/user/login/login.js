@@ -10,6 +10,8 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+
+
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
@@ -18,12 +20,13 @@ Page({
   },
 
   onLoad: function () {
-    console.log("where are you onload?")
+    console.log("login page onload?")
       wx.setNavigationBarTitle({
         title: '登陆'
       })
 
     if (app.globalData.userInfo) {
+      console.log("already have app.globalData.userInfo")
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
@@ -67,7 +70,7 @@ Page({
   },
 
   getUserInfo: function(e) {
-    console.log(e)
+    console.log("getUserInfo return ", e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
@@ -86,40 +89,57 @@ Page({
   //       duration: 1000
   //     })
   //   }
-  console.log("Code login is clicked.")
-  wx.login({
-    timeout: 80000,
-    success: function (r) {
-      var code = r.code;//登录凭证
-      console.log("Code is ", code)
-      if (code) {
-          //2、发送登录凭证以获取OpenID
-          wx.request({
-            url: 'https://rockzhang.com/login/', //自己服务登录地址
-            method: 'post',
-            header: {'content-type': 'application/json'},
-            data: {code: code},
-            success: function (data) {
-                          console.log('获取用户OpenID成功', data);
-                      },
-            fail: function () {
-                        console.log('获取用户OpenID失败');
-            }                  
-          })
-      } else {
-          console.log('获取用户登录态失败！' + r.errMsg)
-      }
-    },
-    fail: function () {
-        callback(false)
-    }
-  })
+      console.log("Code login is clicked.")
+
+      var that = this
+      wx.login({
+        timeout: 80000,
+        success: function (r) {
+          var code = r.code;//登录凭证
+          console.log("Code is ", code)
+    
+          if (code) {
+              //2、发送登录凭证以获取OpenID
+              wx.request({
+                url: 'https://rockzhang.com/login/', //自己服务登录地址
+                method: 'post',
+                header: {'content-type': 'application/json'},
+                data: {code: code},
+                success: function (data1) {
+                              that.setData({"inputValue":data1.data})
+                              app.globalData.openid = data1.data
+                              // console.log('获取用户OpenID成功', data1.data);
+                              wx.showToast({
+                                title: '获取用户标识成功',
+                                duration: 1000
+                              })
+                          },
+                fail: function () {
+                            console.log('获取用户OpenID失败');
+                },
+                
+                complete: function() {
+                  console.log("请求完成")
+                }
+              })
+
+              console.log("Wx.request send called.")
+          } else {
+              console.log('获取用户登录态失败！' + r.errMsg)
+          }
+        },
+        fail: function () {
+            callback(false)
+        }
+      })
   },
+
   bindKeyInput: function (e) {
     this.setData({
       inputValue: e.detail.value
     })
   },
+
   //accesstoken验证登陆
   login: function (token) {
     wx.showLoading({
